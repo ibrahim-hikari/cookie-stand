@@ -1,6 +1,6 @@
 `use strict`;
 
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm',];
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm',''];
 var locationStore = [];
 var table = document.getElementById('cookies')
 
@@ -27,13 +27,13 @@ function Cities(name, min, max, avg) {
 
     this.hoursSalesArr = [];
     this.cookiesArr = [];
-    this.cookiesSales = 0;
+    this.cookiesSalesTotal = 0;
     locationStore.push(this);
 }
 
 
 Cities.prototype.assignRandomCookies = function () {
-    for (var i =0; i<= hours.length; i++){
+    for (var i = 0; i <= hours.length; i++) {
 
         var randomCookies = Math.ceil(Math.random() * (this.max - this.min) + this.min);
         this.cookiesArr.push(randomCookies);
@@ -45,7 +45,7 @@ Cities.prototype.generateHourlySales = function () {
     for (var i = 0; i < hours.length; i++) {
         var hourCookies = Math.ceil(this.cookiesArr[i] * this.avg);
         this.hoursSalesArr.push(hourCookies);
-        this.cookiesSales += hourCookies;
+        this.cookiesSalesTotal += hourCookies;
     }
 }
 
@@ -55,14 +55,14 @@ Cities.prototype.render = function () {
     var tdName = document.createElement('td');
     tdName.textContent = this.name;
     trName.appendChild(tdName);
-    for (var i = -1; i < this.hoursSalesArr.length; i++) {
+    for (var i = 0; i < (this.hoursSalesArr.length-1); i++) {
         var tdCell = document.createElement('td')
-        tdCell.textContent = this.hoursSalesArr[i];
         trName.appendChild(tdCell)
+        tdCell.textContent = this.hoursSalesArr[i];
     }
 
     var citiesCell = document.createElement('td');
-    citiesCell.textContent = this.cookiesSales;
+    citiesCell.textContent = this.cookiesSalesTotal;
     trName.appendChild(citiesCell);
     table.appendChild(trName);
 };
@@ -70,137 +70,39 @@ Cities.prototype.render = function () {
 var seattle = new Cities('Seattle', 23, 65, 6.3);
 var Tokoy = new Cities('Tokyo', 3, 24, 1.2);
 var Dubai = new Cities('Dubai', 11, 38, 3.7);
-var Paris  = new Cities('Paris', 20, 38, 2.8);
+var Paris = new Cities('Paris', 20, 38, 2.8);
 var Lima = new Cities('Lima', 2, 16, 4.6);
 
 function renderAll() {
     for (let i = 0; i < locationStore.length; i++) {
         locationStore[i].render();
-        
+
     }
 };
 
 function footerRow() {
-    var tr = document.createElement('tr');
-    tr.textContent = 'Total';
-    table.appendChild(tr);
+    var trFoot = document.createElement('tr');
+    table.appendChild(trFoot);
+    trFoot.textContent = 'Total';
     var finalTotal = 0;
-    for (var i = 0; i < hours.length; i++) {
-      var hourlyTotal = 0;
-      for (var j = 0; j < locationStore.length; j++) {
-        hourlyTotal = hourlyTotal + locationStore[j].cookiesArr[i];
-        finalTotal += locationStore[j].cookiesArr[i];
-        console.log(finalTotal);
-      }
-      var tdEle = document.createElement('td');
-      tdEle.textContent = hourlyTotal;
-      tr.appendChild(tdEle);
+    for (var i = 1; i < hours.length; i++) {
+        var hourlyTotal = 0;
+        for (var j = 0; j < locationStore.length; j++) {
+            hourlyTotal = hourlyTotal + locationStore[j].hoursSalesArr[i];
+            finalTotal += locationStore[j].hoursSalesArr[i];
+            console.log(finalTotal);
+        }
+        var tdEle = document.createElement('td');
+        tdEle.textContent = hourlyTotal;
+        trFoot.appendChild(tdEle);
     }
     tdEle = document.createElement('td');
     tdEle.textContent = finalTotal;
-    tr.appendChild(tdEle);
-    };
-    headerRow();
-    renderAll();
-    footerRow();
-// console.log(anyarr[0])
-
-
-//   Kitten.prototype.render = function() {
-
-//     var container = document.getElementById('kittenProfiles')
-//     var article = document.createElement('article');
-//     container.appendChild(article);
-
-//     var h2 = document.createElement('h2');
-//     article.appendChild(h2);
-//     h2.textContent = this.name;
-
-//     var p = document.createElement('p');
-//     article.appendChild(p);
-//     p.textContent = `${this.name} is adorable and is ${this.age} months old`;
-
-//     // do the list
-//     var timeList = document.createElement('ul');
-//     article.appendChild(timeList);
-
-//     for(var i = 0; i < this.time.length; i++) {
-//       var time = this.time[i];
-//       var listItem = document.createElement('li');
-//       timeList.appendChild(listItem);
-//       listItem.textContent = time;
-//     }
-
-
-//     // do the table
-//     var table = document.createElement('table');
-//     article.appendChild(table);
-
-//     // header row
-//     var headerRow = document.createElement('tr');
-//     table.appendChild(headerRow);
-
-//     var kidsHeader = document.createElement('th');
-//     headerRow.appendChild(kidsHeader);
-//     kidsHeader.textContent = 'Good with kids';
-
-//     var dogsHeader = document.createElement('th');
-//     headerRow.appendChild(dogsHeader);
-//     dogsHeader.textContent = 'Good with dogs';
-
-//     var catsHeader = document.createElement('th');
-//     headerRow.appendChild(catsHeader);
-//     catsHeader.textContent = 'Good with other cats';
-
-
-//     var dataRow = document.createElement('tr');
-//     table.appendChild(dataRow);
-
-//     var kidsData = document.createElement('td');
-//     dataRow.appendChild(kidsData);
-//     kidsData.textContent = this.goodWithKids;
-
-//     var dogsData = document.createElement('td');
-//     dataRow.appendChild(dogsData);
-//     dogsData.textContent = this.goodWithDogs;
-
-//     var catsData = document.createElement('td');
-//     dataRow.appendChild(catsData);
-//     catsData.textContent = this.goodWithCats;
-
-//     // do the image
-//     var img = document.createElement('img');
-//     article.appendChild(img);
-//     img.setAttribute('src', this.image);
-//   }
-
-
-
-  // store all kittens, notice last kitten was not first stored in a variable
-
-//   for(var i = 0; i < kittens.length; i++) {
-//     kittens[i].render();
-//   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    trFoot.appendChild(tdEle);
+};
+headerRow();
+renderAll();
+footerRow();
 
 // var Hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm',
 //    '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];

@@ -1,0 +1,22 @@
+th {
+    background-color: lawngreen;
+    border-style: solid;
+    color: navy;
+    border-width: 1px 1px 1px 1px;
+}
+
+td {
+    border-style:solid ;
+    color: mediumaquamarine;
+    border-width: 1px 1px 1px 1px;
+}
+table{
+    border-style: solid;
+    }
+
+tr {
+
+    color: mediumvioletred;
+    border-style: solid;
+}
+
