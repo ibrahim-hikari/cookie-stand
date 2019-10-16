@@ -1,0 +1,16 @@
+
+body{
+
+background-image: url(https://i.stack.imgur.com/p9mUO.jpg);
+color: sandybrown;
+}
+h1{
+    text-align: center;
+    font-size: 150px;
+    margin-bottom: 330px;
+}
+div{
+    text-align: center;
+    font-size: 50px;
+    color: salmon;
+}
