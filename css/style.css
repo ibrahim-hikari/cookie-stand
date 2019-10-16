@@ -25,10 +25,15 @@ td{
 }
 
 body{
-    background-color: rgb(209, 205, 209);
+    background-image: url(https://www.citizenm.com/cache/images/seattle_city_image_1200x675-1_004b02a34b02a3.jpg);
 }
 h1{
     text-align: center;
     color: rgb(129, 21, 21);
+    font-size: 100px;
+}
+p{
     font-size: 50px;
+    letter-spacing: 5px;
+    color: rgb(93, 141, 3);
 }
