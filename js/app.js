@@ -101,8 +101,8 @@ function footerRow(table) {
 
         var hourlyTotal = 0;
 
-        for (var jndex = 0; jndex < locationStore.length; jndex++) {
-            hourlyTotal += locationStore[jndex].hoursSalesArr[index];
+        for (var jndex = 0; jndex < cities.length; jndex++) {
+            hourlyTotal += cities[jndex].hoursSalesArr[index];
         }
 
         tdFoot.textContent = hourlyTotal;
@@ -114,20 +114,20 @@ function footerRow(table) {
     trFoot.appendChild(tdFoot);
     tdFoot.textContent = totalAll;
 };
-
-var seattle = new Cities('Seattle', 23, 65, 6.3);
-var Tokoy = new Cities('Tokyo', 3, 24, 1.2);
-var Dubai = new Cities('Dubai', 11, 38, 3.7);
-var Paris = new Cities('Paris', 20, 38, 2.8);
-var Lima = new Cities('Lima', 2, 16, 4.6);
-var locationStore = [seattle, Tokoy, Dubai, Paris, Lima];
+var cities = []
+cities.push(new Cities('Seattle', 23, 65, 6.3));
+cities.push(new Cities('Tokyo', 3, 24, 1.2));
+cities.push(new Cities('Dubai', 11, 38, 3.7));
+cities.push(new Cities('Paris', 20, 38, 2.8));
+cities.push(new Cities('Lima', 2, 16, 4.6));
+// var locationStore = [seattle, Tokoy, Dubai, Paris, Lima];
 
 // /////////////// ////////////
 headerRow(table);
 
-for (let k = 0; k < locationStore.length; k++) {
+for (let k = 0; k < cities.length; k++) {
    
-    var towns = locationStore[k];
+    var towns = cities[k];
     towns.render();
     
 }
@@ -135,6 +135,26 @@ for (let k = 0; k < locationStore.length; k++) {
 
 footerRow(table);
 
+function formNew(event) {
+    event.preventDefault();
+    
+    var cityName = event.target.name.value;
+    var min = parseInt(event.target.min.value);
+    var max = parseInt(event.target.max.value);
+    var avg = parseFloat(event.target.avg.value);
+    
+    var newC = new Cities(name,min,max,avg)
+
+    cities.push(newC);
+
+    table.removeChild(trFoot)
+
+    cityName.render(table);
+
+    footerRow();
+}
+ var form = document.getElementById('newC')
+ form.addEventListener('submit', formNew)
 
 
 
