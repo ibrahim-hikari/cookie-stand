@@ -45,6 +45,7 @@ function headerRow() {
 
     var thHead = document.createElement('th');
     trHead.appendChild(thHead);
+    thHead.textContent = '***'
 
     for (var i = 0; i < hours.length; i++) {
 
@@ -101,7 +102,7 @@ function footerRow(table) {
         var hourlyTotal = 0;
 
         for (var jndex = 0; jndex < locationStore.length; jndex++) {
-            hourlyTotal = hourlyTotal + locationStore[jndex].hoursSalesArr[index];
+            hourlyTotal += locationStore[jndex].hoursSalesArr[index];
         }
 
         tdFoot.textContent = hourlyTotal;
@@ -133,6 +134,9 @@ for (let k = 0; k < locationStore.length; k++) {
 
 
 footerRow(table);
+
+
+
 
 // var Hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm',
 //    '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
