@@ -3,6 +3,7 @@ table{
     margin-right: auto;
     border-style: solid;
     border-color: rgb(102, 27, 0);
+    background-color: green;
 }
 th{
     border-style: solid;
@@ -21,19 +22,74 @@ td{
     text-align: center;
     color: rgb(102, 0, 0);
     font-size: 20px;
-
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body{
-    background-image: url(https://www.citizenm.com/cache/images/seattle_city_image_1200x675-1_004b02a34b02a3.jpg);
+    background-image: url(https://images6.alphacoders.com/453/453624.jpg);
 }
 h1{
     text-align: center;
-    color: rgb(129, 21, 21);
+    color: rgb(120, 21, 129);
     font-size: 100px;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 0px;
 }
 p{
     font-size: 50px;
     letter-spacing: 5px;
-    color: rgb(93, 141, 3);
+    color: rgb(3, 40, 141);
+    font-family: 'Lobster', cursive;
+        background-image: linear-gradient(to left, violet, indigo, blue, green, orange, red);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    color: rgb(6, 129, 68);
+    font-size: 50px;
+}
+li{
+display: inline-block;
+font-family: 'Lobster', cursive;
+}
+nav{
+    text-align: center;
+    word-spacing: 50px;
+}
+
+form{
+    padding-bottom: 100px;
+    color: rgb(146, 144, 9);
+    font-size: 20px ;
+    font-family: 'Acme', sans-serif;    
+    
+}
+legend{
+    font-size: 50px;
+    color: lightcoral;
+}
+fieldset :nth-child(2){
+    padding-right: 183px;
+}
+fieldset :nth-child(4){
+    padding-left: 100px;
+}
+fieldset :nth-child(9){
+    padding-left: 100px;
+    padding-right: 66px;
+}
+
+button{
+    font-size:60px ;
+    color: lightcoral;
+    background-color: rgb(6, 69, 80);
+    padding: 0px 570px;
+    text-align: center;
+    font-family:'Lobster', cursive ;
+}
+label{
+    padding-right: 10px;
 }

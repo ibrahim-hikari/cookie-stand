@@ -3,33 +3,41 @@
 
 <head>
     <title>salad</title>
+    <link href="https://fonts.googleapis.com/css?family=Acme|Dancing+Script|Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <p>Welcome to Seattle</p>
+    <p>Cookies Around The World</p>
     <h1>
         Sales
     </h1>
-
-    <div id="cookies">
-        <!--  -->
-    </div>
+    <nav>
+        <ul>
+            <li> <a href="index.html">Home</a></li>
+            <li><a href="sales.html">Sales</a></li>
+            <li><a href="photos.html">Photos</a></li>
+        </ul>
+    </nav>
 
     <form id="newC">
         <fieldset>
             <legend>Info</legend>
-            <label>City Name: </label>
-            <input type="text" name="cityName">
-            <label>Minimum Number Of Customres</label>
-            <input type="text" name="minNum">
-            <label>Maxmum Number Of Customres</label>
-            <input type="text" name="maxNum">
-            <label>Average Number Of Sales</label>
-            <input type="text" step="0.1" name="avgNum">
+            <label class="first">City Name: </label>
+            <input class="first" type="text" name="cityName">
+            <label class="second">Minimum Number Of Customres: </label>
+            <input class="second" type="text" name="minNum"> <br>
+            <label class="third">Maxmum Number Of Customres: </label>
+            <input class="third" type="text" name="maxNum">
+            <label class="fourth">Average Number Of Sales: </label>
+            <input class="fourth" type="text" step="0.1" name="avgNum">
         </fieldset>
         <button type="submit">Submit</button>
     </form>
+
+    <div id="cookies">
+    </div>
+
 
 
     <script src="js/app.js"></script>

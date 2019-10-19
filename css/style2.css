@@ -1,21 +1,32 @@
 h1{
     text-align: center;
     font-size: 200px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    color: rgb(110, 4, 57);
-    float: left;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    color: rgb(211, 140, 7);
+    font-family: 'Dancing Script', cursive;
+    float: right;
 }
 body{
-
-    background-image: url(https://growinghappykids.com/wp-content/uploads/2018/08/seattle-image-1.jpg);
+    background-image: url(https://www.desktopbackground.org/download/1366x768/2010/07/26/54309_cookie-monster-backgrounds-i-made-d-1920x1080-wallpapers_1920x1080_h.jpg);
     }
     
 a{
     text-decoration: none;
     text-align: center;
-    color: rgb(82, 3, 3);
+    color: rgb(151, 41, 8);
     font-size: 100px;
+}
+li{
+display: inline-block;
+font-family: 'Lobster', cursive;
+
+}
+nav{
+    text-align: center;
+    word-spacing: 50px;
+    float: left;
+    padding-left: 0px;
 }
 p{
     text-align: center;
