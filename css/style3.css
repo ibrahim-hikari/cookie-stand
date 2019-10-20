@@ -1,22 +1,44 @@
 body{
     background-image: url(https://thewallpaper.co//wp-content/uploads/2016/10/hd-cookie-monster-wallpaper-background-photos-windows-amazing-4k-best-wallpaper-ever-free-download-pictures-1920x1200.jpg);
 }
-h1{
-    margin: -8px -8px 0px -8px;
-
-}
-h1 p{
+h1 {
     text-align: center;
-    font-size: 50px;
-    float: right;
-    padding-right: 300px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-image: linear-gradient(to left, rgb(255, 104, 104), rgb(93, 55, 121), rgb(93, 93, 246), rgb(44, 139, 44), rgb(248, 190, 81), rgb(250, 76, 76));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 100px;
+    float: left;
+    margin-top: -10px;
+    margin-bottom: 0px;
+    margin-left: 50px;
+    font-family: 'Dancing Script', cursive;
+    color: greenyellow;
+  }
+  li{
+    display: inline;
+    }
+  nav{
+    word-spacing: 20px;
+    padding-top: 80px;
+    font-size: 60px;
+    font-family: 'Lobster', cursive;
+    }
+
+  a{
+    text-decoration: none;
+    color: rgb(170, 96, 0);
+  }
+ #hima {
+  float: right;
+  border-style: solid ;
+  width: 50%;
+  height: 300px;
+  overflow: auto;
+  color: rgb(2, 30, 121);
+  line-height: 24px;
+  font-size: 20px;
+  background-color: lightcoral;
 }
-
-
+#all{
+  float: left;
+}
 .slideshow-container {
     max-width: 700px;
     position: relative;
@@ -90,4 +112,8 @@ h1 p{
   @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
+  }
+  footer{
+    margin-top: 450px ;
+    margin-left: 700px;
   }
